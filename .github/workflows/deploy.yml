@@ -1,0 +1,100 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: armlabhq/safesignal-website
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    outputs:
+      image: ${{ steps.meta.outputs.tags }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=sha,prefix=sha-
+            type=ref,event=branch
+            type=semver,pattern={{version}}
+            type=raw,value=latest,enable=${{ startsWith(github.ref, 'refs/tags/v') }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+  deploy-acc:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    environment: acc
+    steps:
+      - name: Set up Tailscale
+        uses: tailscale/github-action@v2
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+
+      - name: Deploy to fsn1 (acc)
+        uses: appleboy/ssh-action@v1
+        with:
+          host: wouter-fsn1
+          username: wouter
+          key: ${{ secrets.FSN1_SSH_KEY }}
+          script: |
+            cd ~/safesignal/acc
+            echo "IMAGE=ghcr.io/armlabhq/safesignal-website:main" > .env
+            docker compose pull
+            docker compose up -d --remove-orphans
+
+  deploy-prod:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+    environment: prod
+    steps:
+      - name: Set up Tailscale
+        uses: tailscale/github-action@v2
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+
+      - name: Deploy to fsn1 (prod)
+        uses: appleboy/ssh-action@v1
+        env:
+          DEPLOY_TAG: ${{ github.ref_name }}
+        with:
+          host: wouter-fsn1
+          username: wouter
+          key: ${{ secrets.FSN1_SSH_KEY }}
+          envs: DEPLOY_TAG
+          script: |
+            cd ~/safesignal/prod
+            echo "IMAGE=ghcr.io/armlabhq/safesignal-website:${DEPLOY_TAG}" > .env
+            docker compose pull
+            docker compose up -d --remove-orphans

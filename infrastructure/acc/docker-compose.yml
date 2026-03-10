@@ -1,0 +1,15 @@
+name: safesignal-acc
+
+services:
+  web:
+    image: ${IMAGE:-ghcr.io/armlabhq/safesignal-website:main}
+    container_name: safesignal-acc-web
+    restart: unless-stopped
+    networks:
+      - proxy
+      - internal
+
+networks:
+  proxy:
+    external: true
+  internal:
