@@ -124,14 +124,14 @@ const trustItems = [
     desc: "Actief in voertuigsignalisatie since 2008",
   },
   {
-    value: "500+",
+    value: "100+",
     label: "Voertuigen uitgerust",
     desc: "Politie, brandweer, takeldiensten en meer",
   },
   {
-    value: "2 dagen",
+    value: "~1 week",
     label: "Gemiddelde levertijd",
-    desc: "Snel leverbaar uit Belgisch magazijn",
+    desc: "Leverbaar uit Belgisch magazijn",
   },
   {
     value: "CE / E-keur",
@@ -229,9 +229,9 @@ export default function HomePage() {
           <div className="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-6 border-t border-white/[0.08] pt-10 fade-up fade-up-4">
             {[
               { value: "15+", label: "Jaar ervaring" },
-              { value: "500+", label: "Voertuigen uitgerust" },
+              { value: "100+", label: "Voertuigen uitgerust" },
               { value: "CE/E-keur", label: "Gecertificeerd" },
-              { value: "2 dgn", label: "Gem. levertijd" },
+              { value: "~1 week", label: "Gem. levertijd" },
             ].map((stat) => (
               <div key={stat.label}>
                 <div

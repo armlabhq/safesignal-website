@@ -122,9 +122,9 @@ export default function ReadyPage() {
           <div className="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-6 border-t border-white/[0.08] pt-10">
             {[
               { value: "15+", label: "Jaar ervaring" },
-              { value: "500+", label: "Voertuigen uitgerust" },
+              { value: "100+", label: "Voertuigen uitgerust" },
               { value: "CE / E-keur", label: "Gecertificeerd" },
-              { value: "2 dgn", label: "Gem. levertijd" },
+              { value: "~1 week", label: "Gem. levertijd" },
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="text-2xl sm:text-3xl font-black" style={{ fontFamily: "var(--font-display)", color: "#4A7FD4" }}>{stat.value}</div>

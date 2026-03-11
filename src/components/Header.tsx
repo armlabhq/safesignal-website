@@ -17,10 +17,18 @@ interface HeaderProps {
   variant?: "light" | "dark";
 }
 
+function getLogoAccentColor(pathname: string): string {
+  if (pathname.startsWith("/ready")) return "#2563EB";
+  if (pathname.startsWith("/infra")) return "#C0392B";
+  if (pathname.startsWith("/convoy")) return "#F5B800";
+  return "#F5B800";
+}
+
 export function Header({ variant = "dark" }: HeaderProps) {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const logoAccentColor = getLogoAccentColor(pathname);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -43,7 +51,7 @@ export function Header({ variant = "dark" }: HeaderProps) {
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
-          <SafeSignalLogo variant={isLight ? "light" : "dark"} size="sm" />
+          <SafeSignalLogo variant={isLight ? "light" : "dark"} size="sm" accentColor={logoAccentColor} />
         </Link>
 
         {/* Desktop nav */}
