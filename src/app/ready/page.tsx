@@ -64,6 +64,8 @@ const vehicleTypes = [
 ];
 
 export default function ReadyPage() {
+  const readyBeaconText = "Altijd klaar.";
+
   return (
     <>
       <Header variant="light" />
@@ -105,7 +107,17 @@ export default function ReadyPage() {
             >
               Uw voertuig.
               <br />
-              <span style={{ color: "#4A7FD4" }}>Altijd klaar.</span>
+              <span>
+                {Array.from(readyBeaconText).map((char, i) => (
+                  <span
+                    key={`ready-beacon-${i}-${char}`}
+                    className="ready-beacon-char"
+                    style={{ animationDelay: `${i * 0.08}s` }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                ))}
+              </span>
             </h1>
 
             <p className="text-lg sm:text-xl text-white/55 leading-relaxed max-w-xl mb-10" style={{ fontFamily: "var(--font-body)" }}>

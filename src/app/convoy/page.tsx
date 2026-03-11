@@ -110,6 +110,8 @@ const transportTypes = [
 ];
 
 export default function ConvoyPage() {
+  const convoySweepText = "Veilig ter plaatse.";
+
   return (
     <>
       <Header variant="light" />
@@ -159,7 +161,17 @@ export default function ConvoyPage() {
             >
               Elke lading.
               <br />
-              <span style={{ color: "#F5B800" }}>Veilig ter plaatse.</span>
+              <span>
+                {Array.from(convoySweepText).map((char, i) => (
+                  <span
+                    key={`convoy-sweep-${i}-${char}`}
+                    className="convoy-sweep-letter"
+                    style={{ animationDelay: `${i * 0.07}s` }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                ))}
+              </span>
             </h1>
 
             <p className="text-lg sm:text-xl text-white/55 leading-relaxed max-w-xl mb-10" style={{ fontFamily: "var(--font-body)" }}>

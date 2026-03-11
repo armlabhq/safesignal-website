@@ -157,7 +157,10 @@ export default function InfraPage() {
             >
               De weg vrij.
               <br />
-              <span style={{ color: "#E05252" }}>De werf veilig.</span>
+              <span>
+                <span className="infra-alt-word">De werf</span>{" "}
+                <span className="infra-alt-word infra-alt-word-b">veilig.</span>
+              </span>
             </h1>
 
             <p className="text-lg sm:text-xl text-white/55 leading-relaxed max-w-xl mb-10" style={{ fontFamily: "var(--font-body)" }}>

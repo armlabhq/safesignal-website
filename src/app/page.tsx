@@ -173,7 +173,7 @@ export default function HomePage() {
                 className="text-[11px] font-semibold text-white/55 uppercase tracking-[0.14em]"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                Voertuigsignalisatie & Radiocommunicatie · Bilzen-Hoeselt
+                Voertuigsignalisatie & Radiocommunicatie
               </span>
             </div>
 
