@@ -2,9 +2,9 @@ import Link from "next/link";
 import { SafeSignalLogo } from "./SafeSignalLogo";
 
 const divisies = [
-  { href: "/convoy", label: "SafeSignal Convoy" },
-  { href: "/infra", label: "SafeSignal Infra" },
   { href: "/ready", label: "SafeSignal Ready" },
+  { href: "/infra", label: "SafeSignal Infra" },
+  { href: "/convoy", label: "SafeSignal Convoy" },
 ];
 
 const overige = [

@@ -273,39 +273,39 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* SafeSignal Convoy */}
+            {/* SafeSignal Ready */}
             <Link
-              href="/convoy"
+              href="/ready"
               className="group relative rounded-2xl overflow-hidden border border-black/[0.07] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
-              style={{ background: "#0D1B33" }}
+              style={{ background: "#1A0808" }}
             >
-              <div className="h-1 w-full" style={{ background: "linear-gradient(90deg, #1B3A6B, #4A7FD4)" }} />
+              <div className="h-1 w-full" style={{ background: "linear-gradient(90deg, #5C1010, #C0392B)" }} />
               <div className="p-8 flex flex-col flex-1">
                 <span
                   className="text-xs font-bold uppercase tracking-widest mb-3"
-                  style={{ color: "#4A7FD4", fontFamily: "var(--font-body)" }}
+                  style={{ color: "#E05252", fontFamily: "var(--font-body)" }}
                 >
-                  SafeSignal Convoy
+                  SafeSignal Ready
                 </span>
                 <h3
                   className="text-2xl font-black text-white mb-3"
                   style={{ fontFamily: "var(--font-display)", fontWeight: 900 }}
                 >
-                  Begeleiding uitzonderlijk transport
+                  Voertuiguitrusting & noodverlichting
                 </h3>
                 <p
                   className="text-sm text-white/55 leading-relaxed mb-6 flex-1"
                   style={{ fontFamily: "var(--font-body)" }}
                 >
-                  Professionele escortediensten voor brede en zware ladingen door heel België en de buurlanden.
-                  Van vergunningsaanvraag tot aankomst.
+                  Complete uitrusting van interventie- en werkvoertuigen. Lichtbalken, sirenes, Battenburg-markering
+                  en radiocommunicatie — CE-gecertificeerd en vakkundig gemonteerd.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {["Escortevoertuigen", "Pilootbegeleiding", "Vergunningen"].map((tag) => (
+                  {["Lichtbalken & sirenes", "Battenburg", "Radiocommunicatie"].map((tag) => (
                     <span
                       key={tag}
                       className="text-[11px] font-semibold px-2.5 py-1 rounded-full"
-                      style={{ background: "#4A7FD420", color: "#4A7FD4", fontFamily: "var(--font-body)" }}
+                      style={{ background: "#C0392B20", color: "#E05252", fontFamily: "var(--font-body)" }}
                     >
                       {tag}
                     </span>
@@ -313,9 +313,9 @@ export default function HomePage() {
                 </div>
                 <div
                   className="inline-flex items-center gap-1.5 text-sm font-bold"
-                  style={{ color: "#4A7FD4", fontFamily: "var(--font-body)" }}
+                  style={{ color: "#E05252", fontFamily: "var(--font-body)" }}
                 >
-                  Meer over Convoy
+                  Meer over Ready
                   <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                   </svg>
@@ -373,39 +373,39 @@ export default function HomePage() {
               </div>
             </Link>
 
-            {/* SafeSignal Ready */}
+            {/* SafeSignal Convoy */}
             <Link
-              href="/ready"
+              href="/convoy"
               className="group relative rounded-2xl overflow-hidden border border-black/[0.07] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
-              style={{ background: "#1A0808" }}
+              style={{ background: "#0D1B33" }}
             >
-              <div className="h-1 w-full" style={{ background: "linear-gradient(90deg, #5C1010, #C0392B)" }} />
+              <div className="h-1 w-full" style={{ background: "linear-gradient(90deg, #1B3A6B, #4A7FD4)" }} />
               <div className="p-8 flex flex-col flex-1">
                 <span
                   className="text-xs font-bold uppercase tracking-widest mb-3"
-                  style={{ color: "#E05252", fontFamily: "var(--font-body)" }}
+                  style={{ color: "#4A7FD4", fontFamily: "var(--font-body)" }}
                 >
-                  SafeSignal Ready
+                  SafeSignal Convoy
                 </span>
                 <h3
                   className="text-2xl font-black text-white mb-3"
                   style={{ fontFamily: "var(--font-display)", fontWeight: 900 }}
                 >
-                  Voertuiguitrusting & noodverlichting
+                  Begeleiding uitzonderlijk transport
                 </h3>
                 <p
                   className="text-sm text-white/55 leading-relaxed mb-6 flex-1"
                   style={{ fontFamily: "var(--font-body)" }}
                 >
-                  Complete uitrusting van interventie- en werkvoertuigen. Lichtbalken, sirenes, Battenburg-markering
-                  en radiocommunicatie — CE-gecertificeerd en vakkundig gemonteerd.
+                  Professionele escortediensten voor brede en zware ladingen door heel België en de buurlanden.
+                  Van vergunningsaanvraag tot aankomst.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {["Lichtbalken & sirenes", "Battenburg", "Radiocommunicatie"].map((tag) => (
+                  {["Escortevoertuigen", "Pilootbegeleiding", "Vergunningen"].map((tag) => (
                     <span
                       key={tag}
                       className="text-[11px] font-semibold px-2.5 py-1 rounded-full"
-                      style={{ background: "#C0392B20", color: "#E05252", fontFamily: "var(--font-body)" }}
+                      style={{ background: "#4A7FD420", color: "#4A7FD4", fontFamily: "var(--font-body)" }}
                     >
                       {tag}
                     </span>
@@ -413,9 +413,9 @@ export default function HomePage() {
                 </div>
                 <div
                   className="inline-flex items-center gap-1.5 text-sm font-bold"
-                  style={{ color: "#E05252", fontFamily: "var(--font-body)" }}
+                  style={{ color: "#4A7FD4", fontFamily: "var(--font-body)" }}
                 >
-                  Meer over Ready
+                  Meer over Convoy
                   <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                   </svg>

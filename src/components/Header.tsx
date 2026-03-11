@@ -6,9 +6,9 @@ import { useState, useEffect } from "react";
 import { SafeSignalLogo } from "./SafeSignalLogo";
 
 const navLinks = [
-  { href: "/convoy", label: "Convoy" },
-  { href: "/infra", label: "Infra" },
   { href: "/ready", label: "Ready" },
+  { href: "/infra", label: "Infra" },
+  { href: "/convoy", label: "Convoy" },
   { href: "/over-ons", label: "Over ons" },
   { href: "/contact", label: "Contact" },
 ];
