@@ -129,11 +129,6 @@ const trustItems = [
     desc: "Politie, brandweer, takeldiensten en meer",
   },
   {
-    value: "~1 week",
-    label: "Gemiddelde levertijd",
-    desc: "Leverbaar uit Belgisch magazijn",
-  },
-  {
     value: "CE / E-keur",
     label: "Gecertificeerd",
     desc: "Alle producten voldoen aan Europese normen",
@@ -226,12 +221,11 @@ export default function HomePage() {
           </div>
 
           {/* Stats row */}
-          <div className="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-6 border-t border-white/[0.08] pt-10 fade-up fade-up-4">
+          <div className="mt-20 grid grid-cols-2 sm:grid-cols-3 gap-6 border-t border-white/[0.08] pt-10 fade-up fade-up-4">
             {[
               { value: "15+", label: "Jaar ervaring" },
               { value: "100+", label: "Voertuigen uitgerust" },
               { value: "CE/E-keur", label: "Gecertificeerd" },
-              { value: "~1 week", label: "Gem. levertijd" },
             ].map((stat) => (
               <div key={stat.label}>
                 <div
@@ -518,7 +512,7 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {trustItems.map((item) => (
               <div
                 key={item.value}
