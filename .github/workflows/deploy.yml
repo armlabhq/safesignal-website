@@ -62,7 +62,7 @@ jobs:
       - name: Deploy to fsn1 (acc)
         uses: appleboy/ssh-action@v1
         with:
-          host: wouter-fsn1
+          host: fsn1.tailde0fcd.ts.net
           username: wouter
           key: ${{ secrets.FSN1_SSH_KEY }}
           script: |
@@ -89,7 +89,7 @@ jobs:
         env:
           DEPLOY_TAG: ${{ github.ref_name }}
         with:
-          host: wouter-fsn1
+          host: fsn1.tailde0fcd.ts.net
           username: wouter
           key: ${{ secrets.FSN1_SSH_KEY }}
           envs: DEPLOY_TAG
