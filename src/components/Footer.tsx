@@ -1,18 +1,16 @@
 import Link from "next/link";
 import { SafeSignalLogo } from "./SafeSignalLogo";
 
-const oplossingen = [
-  { href: "/oplossingen/interventie", label: "Interventievoertuigen" },
-  { href: "/oplossingen/werkvoertuigen", label: "Werkvoertuigen" },
-  { href: "/oplossingen/installatie", label: "Installatie & ondersteuning" },
+const divisies = [
+  { href: "/convoy", label: "SafeSignal Convoy" },
+  { href: "/infra", label: "SafeSignal Infra" },
+  { href: "/ready", label: "SafeSignal Ready" },
 ];
 
-const producten = [
-  { href: "/producten/zwaailichten", label: "Zwaailichten" },
-  { href: "/producten/lichtbalken", label: "Lichtbalken" },
-  { href: "/producten/flitsers", label: "Flitsers" },
-  { href: "/producten/communicatie", label: "Communicatie" },
-  { href: "/producten/accessoires", label: "Accessoires" },
+const overige = [
+  { href: "/over-ons", label: "Over ons" },
+  { href: "/oplossingen", label: "Oplossingen" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Footer() {
@@ -31,13 +29,13 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Oplossingen */}
+          {/* Divisies */}
           <div>
             <p className="text-xs font-semibold text-white/40 uppercase tracking-widest mb-4" style={{ fontFamily: "var(--font-body)" }}>
-              Oplossingen
+              Divisies
             </p>
             <ul className="space-y-2.5">
-              {oplossingen.map((link) => (
+              {divisies.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -51,13 +49,13 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Producten */}
+          {/* Overige */}
           <div>
             <p className="text-xs font-semibold text-white/40 uppercase tracking-widest mb-4" style={{ fontFamily: "var(--font-body)" }}>
-              Producten
+              Overige
             </p>
             <ul className="space-y-2.5">
-              {producten.map((link) => (
+              {overige.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

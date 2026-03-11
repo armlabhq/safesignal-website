@@ -6,9 +6,11 @@ import { useState, useEffect } from "react";
 import { SafeSignalLogo } from "./SafeSignalLogo";
 
 const navLinks = [
+  { href: "/convoy", label: "Convoy" },
+  { href: "/infra", label: "Infra" },
+  { href: "/ready", label: "Ready" },
   { href: "/over-ons", label: "Over ons" },
-  { href: "/oplossingen", label: "Oplossingen" },
-  { href: "/contact", label: "Contacteer ons" },
+  { href: "/contact", label: "Contact" },
 ];
 
 interface HeaderProps {

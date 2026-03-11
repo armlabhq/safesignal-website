@@ -252,7 +252,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── Solutions ─────────────────────────────────────── */}
+      {/* ─── Business units ────────────────────────────────── */}
       <section className="py-24 bg-[#F7F6F2]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-14">
@@ -260,82 +260,168 @@ export default function HomePage() {
               className="text-xs font-bold text-[#888] uppercase tracking-widest mb-3"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Oplossingen
+              Drie divisies
             </p>
             <h2
               className="text-4xl sm:text-5xl font-black text-[#090909] leading-[1.05]"
               style={{ fontFamily: "var(--font-display)", fontWeight: 900 }}
             >
-              Voor elk voertuig
+              Eén merk.
               <br />
-              de juiste uitrusting
+              Drie specialisaties.
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {solutions.map((sol) => (
-              <Link
-                key={sol.href}
-                href={sol.href}
-                className="group relative bg-white rounded-2xl overflow-hidden border border-black/[0.07] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
-              >
-                {/* Top accent line */}
-                <div
-                  className="h-1 w-full"
-                  style={{ background: sol.accentColor }}
-                />
-
-                <div className="p-8 flex flex-col flex-1">
-                  <span
-                    className="text-xs font-bold uppercase tracking-widest mb-3"
-                    style={{ color: sol.accentColor, fontFamily: "var(--font-body)" }}
-                  >
-                    {sol.category}
-                  </span>
-                  <h3
-                    className="text-2xl font-black text-[#090909] mb-3"
-                    style={{ fontFamily: "var(--font-display)", fontWeight: 900 }}
-                  >
-                    {sol.title}
-                  </h3>
-                  <p
-                    className="text-sm text-[#555555] leading-relaxed mb-6 flex-1"
-                    style={{ fontFamily: "var(--font-body)" }}
-                  >
-                    {sol.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {sol.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-[11px] font-semibold px-2.5 py-1 rounded-full"
-                        style={{
-                          background: `${sol.accentColor}14`,
-                          color: sol.accentColor,
-                          fontFamily: "var(--font-body)",
-                        }}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div
-                    className="inline-flex items-center gap-1.5 text-sm font-bold"
-                    style={{ color: sol.accentColor, fontFamily: "var(--font-body)" }}
-                  >
-                    Meer informatie
-                    <svg
-                      className="w-4 h-4 group-hover:translate-x-0.5 transition-transform"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
+            {/* SafeSignal Convoy */}
+            <Link
+              href="/convoy"
+              className="group relative rounded-2xl overflow-hidden border border-black/[0.07] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              style={{ background: "#0D1B33" }}
+            >
+              <div className="h-1 w-full" style={{ background: "linear-gradient(90deg, #1B3A6B, #4A7FD4)" }} />
+              <div className="p-8 flex flex-col flex-1">
+                <span
+                  className="text-xs font-bold uppercase tracking-widest mb-3"
+                  style={{ color: "#4A7FD4", fontFamily: "var(--font-body)" }}
+                >
+                  SafeSignal Convoy
+                </span>
+                <h3
+                  className="text-2xl font-black text-white mb-3"
+                  style={{ fontFamily: "var(--font-display)", fontWeight: 900 }}
+                >
+                  Begeleiding uitzonderlijk transport
+                </h3>
+                <p
+                  className="text-sm text-white/55 leading-relaxed mb-6 flex-1"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
+                  Professionele escortediensten voor brede en zware ladingen door heel België en de buurlanden.
+                  Van vergunningsaanvraag tot aankomst.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {["Escortevoertuigen", "Pilootbegeleiding", "Vergunningen"].map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-[11px] font-semibold px-2.5 py-1 rounded-full"
+                      style={{ background: "#4A7FD420", color: "#4A7FD4", fontFamily: "var(--font-body)" }}
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-              </Link>
-            ))}
+                <div
+                  className="inline-flex items-center gap-1.5 text-sm font-bold"
+                  style={{ color: "#4A7FD4", fontFamily: "var(--font-body)" }}
+                >
+                  Meer over Convoy
+                  <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </Link>
+
+            {/* SafeSignal Infra */}
+            <Link
+              href="/infra"
+              className="group relative rounded-2xl overflow-hidden border border-black/[0.07] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              style={{ background: "#0A1F12" }}
+            >
+              <div className="h-1 w-full" style={{ background: "linear-gradient(90deg, #1B5E3A, #3DAA6B)" }} />
+              <div className="p-8 flex flex-col flex-1">
+                <span
+                  className="text-xs font-bold uppercase tracking-widest mb-3"
+                  style={{ color: "#3DAA6B", fontFamily: "var(--font-body)" }}
+                >
+                  SafeSignal Infra
+                </span>
+                <h3
+                  className="text-2xl font-black text-white mb-3"
+                  style={{ fontFamily: "var(--font-display)", fontWeight: 900 }}
+                >
+                  Tijdelijke wegsignalisatie
+                </h3>
+                <p
+                  className="text-sm text-white/55 leading-relaxed mb-6 flex-1"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
+                  Volledige werf- en wegsignalisatie voor nutswerken, weginfrastructuur en wegenwerken.
+                  Signalisatieplannen, materiaalverhuur en gecertificeerde verkeersregelaars.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {["Signalisatieplannen", "Materiaalverhuur", "Verkeersregelaars"].map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-[11px] font-semibold px-2.5 py-1 rounded-full"
+                      style={{ background: "#3DAA6B20", color: "#3DAA6B", fontFamily: "var(--font-body)" }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div
+                  className="inline-flex items-center gap-1.5 text-sm font-bold"
+                  style={{ color: "#3DAA6B", fontFamily: "var(--font-body)" }}
+                >
+                  Meer over Infra
+                  <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </Link>
+
+            {/* SafeSignal Ready */}
+            <Link
+              href="/ready"
+              className="group relative rounded-2xl overflow-hidden border border-black/[0.07] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              style={{ background: "#1A0808" }}
+            >
+              <div className="h-1 w-full" style={{ background: "linear-gradient(90deg, #5C1010, #C0392B)" }} />
+              <div className="p-8 flex flex-col flex-1">
+                <span
+                  className="text-xs font-bold uppercase tracking-widest mb-3"
+                  style={{ color: "#E05252", fontFamily: "var(--font-body)" }}
+                >
+                  SafeSignal Ready
+                </span>
+                <h3
+                  className="text-2xl font-black text-white mb-3"
+                  style={{ fontFamily: "var(--font-display)", fontWeight: 900 }}
+                >
+                  Voertuiguitrusting & noodverlichting
+                </h3>
+                <p
+                  className="text-sm text-white/55 leading-relaxed mb-6 flex-1"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
+                  Complete uitrusting van interventie- en werkvoertuigen. Lichtbalken, sirenes, Battenburg-markering
+                  en radiocommunicatie — CE-gecertificeerd en vakkundig gemonteerd.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {["Lichtbalken & sirenes", "Battenburg", "Radiocommunicatie"].map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-[11px] font-semibold px-2.5 py-1 rounded-full"
+                      style={{ background: "#C0392B20", color: "#E05252", fontFamily: "var(--font-body)" }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div
+                  className="inline-flex items-center gap-1.5 text-sm font-bold"
+                  style={{ color: "#E05252", fontFamily: "var(--font-body)" }}
+                >
+                  Meer over Ready
+                  <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
