@@ -101,9 +101,9 @@ export default function InfraPage() {
       <Header variant="light" />
 
       {/* ─── Hero ─────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "#0A1F12" }}>
+      <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "#1A0808" }}>
         {/* Green accent strip */}
-        <div className="absolute top-0 left-0 right-0 h-[4px]" style={{ background: "linear-gradient(90deg, #1B5E3A 0%, #2E8B57 25%, #3DAA6B 50%, #2E8B57 75%, #1B5E3A 100%)" }} />
+        <div className="absolute top-0 left-0 right-0 h-[4px]" style={{ background: "linear-gradient(90deg, #5C1010 0%, #8B2020 25%, #C0392B 50%, #8B2020 75%, #5C1010 100%)" }} />
 
         {/* Arrow pattern */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.05]">
@@ -113,7 +113,7 @@ export default function InfraPage() {
               className="absolute top-0 bottom-0 flex items-center"
               style={{ right: `${5 + i * 20}%` }}
             >
-              <svg viewBox="0 0 40 80" fill="none" className="w-16 h-32 text-[#3DAA6B]">
+              <svg viewBox="0 0 40 80" fill="none" className="w-16 h-32 text-[#C0392B]">
                 <path d="M4 4 L36 40 L4 76" stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
@@ -123,13 +123,13 @@ export default function InfraPage() {
         {/* Glow */}
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse 50% 60% at 80% 50%, rgba(29,140,74,0.12) 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(ellipse 50% 60% at 80% 50%, rgba(192,57,43,0.12) 0%, transparent 70%)" }}
         />
 
         <div className="relative max-w-7xl mx-auto px-6 pt-28 pb-20 w-full">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2.5 bg-white/[0.07] border border-white/10 rounded-full px-4 py-1.5 mb-10">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#3DAA6B]" style={{ boxShadow: "0 0 6px #3DAA6B" }} />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C0392B]" style={{ boxShadow: "0 0 6px #C0392B" }} />
               <span className="text-[11px] font-semibold text-white/55 uppercase tracking-[0.14em]" style={{ fontFamily: "var(--font-body)" }}>
                 SafeSignal Infra · Tijdelijke wegsignalisatie
               </span>
@@ -141,7 +141,7 @@ export default function InfraPage() {
             >
               De weg vrij.
               <br />
-              <span style={{ color: "#3DAA6B" }}>De werf veilig.</span>
+              <span style={{ color: "#E05252" }}>De werf veilig.</span>
             </h1>
 
             <p className="text-lg sm:text-xl text-white/55 leading-relaxed max-w-xl mb-10" style={{ fontFamily: "var(--font-body)" }}>
@@ -153,7 +153,7 @@ export default function InfraPage() {
               <Link
                 href="/contact#offerte"
                 className="inline-flex items-center gap-2 px-6 py-3.5 font-bold text-sm rounded-lg transition-colors"
-                style={{ background: "#3DAA6B", color: "#fff", fontFamily: "var(--font-body)" }}
+                style={{ background: "#C0392B", color: "#fff", fontFamily: "var(--font-body)" }}
               >
                 Vraag een offerte
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -179,7 +179,7 @@ export default function InfraPage() {
               { value: "7/7", label: "Bereikbaar" },
             ].map((stat) => (
               <div key={stat.label}>
-                <div className="text-2xl sm:text-3xl font-black" style={{ fontFamily: "var(--font-display)", color: "#3DAA6B" }}>{stat.value}</div>
+                <div className="text-2xl sm:text-3xl font-black" style={{ fontFamily: "var(--font-display)", color: "#E05252" }}>{stat.value}</div>
                 <div className="text-xs text-white/35 mt-1 font-medium" style={{ fontFamily: "var(--font-body)" }}>{stat.label}</div>
               </div>
             ))}
@@ -204,7 +204,7 @@ export default function InfraPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (
               <div key={service.title} className="bg-white rounded-2xl p-8 border border-black/[0.07] hover:shadow-lg transition-shadow">
-                <div className="w-10 h-10 text-[#1B5E3A] mb-5">{service.icon}</div>
+                <div className="w-10 h-10 text-[#8B1A1A] mb-5">{service.icon}</div>
                 <h3 className="text-lg font-bold text-[#090909] mb-2" style={{ fontFamily: "var(--font-display)" }}>{service.title}</h3>
                 <p className="text-sm text-[#555] leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{service.description}</p>
               </div>
@@ -235,7 +235,7 @@ export default function InfraPage() {
               {materialCategories.map((cat) => (
                 <div key={cat.name} className="bg-[#F7F6F2] rounded-xl p-5 border border-black/[0.05]">
                   <div className="flex items-center gap-2 mb-1">
-                    <div className="w-2 h-2 rounded-full" style={{ background: "#3DAA6B" }} />
+                    <div className="w-2 h-2 rounded-full" style={{ background: "#C0392B" }} />
                     <p className="text-sm font-bold text-[#090909]" style={{ fontFamily: "var(--font-body)" }}>{cat.name}</p>
                   </div>
                   <p className="text-xs text-[#888] pl-4" style={{ fontFamily: "var(--font-body)" }}>{cat.sub}</p>
@@ -247,7 +247,7 @@ export default function InfraPage() {
       </section>
 
       {/* ─── VSV CTA ─────────────────────────────────────── */}
-      <section className="py-20" style={{ background: "#0A1F12" }}>
+      <section className="py-20" style={{ background: "#1A0808" }}>
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-black text-white mb-4" style={{ fontFamily: "var(--font-display)", fontWeight: 900 }}>
             Conform de VSV-wetgeving
@@ -259,7 +259,7 @@ export default function InfraPage() {
           <Link
             href="/contact#offerte"
             className="inline-flex items-center gap-2 px-6 py-3.5 font-bold text-sm rounded-lg transition-colors"
-            style={{ background: "#3DAA6B", color: "#fff", fontFamily: "var(--font-body)" }}
+            style={{ background: "#C0392B", color: "#fff", fontFamily: "var(--font-body)" }}
           >
             Plan uw project
           </Link>
@@ -286,7 +286,7 @@ export default function InfraPage() {
               <div className="space-y-3">
                 {["Locatie en type werf", "Duur van de werken", "Type signalisatie nodig", "Eventuele vergunningsvereisten"].map((item) => (
                   <div key={item} className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "#3DAA6B" }}>
+                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "#C0392B" }}>
                       <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>

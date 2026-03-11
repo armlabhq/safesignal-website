@@ -99,9 +99,9 @@ export default function ConvoyPage() {
       <Header variant="light" />
 
       {/* ─── Hero ─────────────────────────────────────────── */}
-      <section className="relative bg-[#0D1B33] min-h-screen flex items-center overflow-hidden">
+      <section className="relative bg-[#1A1500] min-h-screen flex items-center overflow-hidden">
         {/* Lightbar strip */}
-        <div className="absolute top-0 left-0 right-0 h-[4px]" style={{ background: "linear-gradient(90deg, #1B3A6B 0%, #2952A3 25%, #4A7FD4 50%, #2952A3 75%, #1B3A6B 100%)" }} />
+        <div className="absolute top-0 left-0 right-0 h-[4px]" style={{ background: "linear-gradient(90deg, #2A2000 0%, #B88000 25%, #F5B800 50%, #B88000 75%, #2A2000 100%)" }} />
 
         {/* Chevron pattern background */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.04]">
@@ -114,7 +114,7 @@ export default function ConvoyPage() {
                 top: "0",
                 bottom: "0",
                 width: "120px",
-                background: "linear-gradient(135deg, #4A7FD4 25%, transparent 25%) -10px 0, linear-gradient(225deg, #4A7FD4 25%, transparent 25%) -10px 0, linear-gradient(315deg, #4A7FD4 25%, transparent 25%), linear-gradient(45deg, #4A7FD4 25%, transparent 25%)",
+                background: "linear-gradient(135deg, #F5B800 25%, transparent 25%) -10px 0, linear-gradient(225deg, #F5B800 25%, transparent 25%) -10px 0, linear-gradient(315deg, #F5B800 25%, transparent 25%), linear-gradient(45deg, #F5B800 25%, transparent 25%)",
                 backgroundSize: "20px 20px",
                 backgroundPosition: "-10px 0, -10px 0, 0 0, 0 0",
               }}
@@ -125,13 +125,13 @@ export default function ConvoyPage() {
         {/* Glow */}
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse 50% 60% at 80% 50%, rgba(41,82,163,0.15) 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(ellipse 50% 60% at 80% 50%, rgba(245,184,0,0.08) 0%, transparent 70%)" }}
         />
 
         <div className="relative max-w-7xl mx-auto px-6 pt-28 pb-20 w-full">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2.5 bg-white/[0.07] border border-white/10 rounded-full px-4 py-1.5 mb-10">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#4A7FD4]" style={{ boxShadow: "0 0 6px #4A7FD4" }} />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#F5B800]" style={{ boxShadow: "0 0 6px #F5B800" }} />
               <span className="text-[11px] font-semibold text-white/55 uppercase tracking-[0.14em]" style={{ fontFamily: "var(--font-body)" }}>
                 SafeSignal Convoy · Begeleiding uitzonderlijk transport
               </span>
@@ -143,7 +143,7 @@ export default function ConvoyPage() {
             >
               Elke lading.
               <br />
-              <span style={{ color: "#4A7FD4" }}>Veilig ter plaatse.</span>
+              <span style={{ color: "#F5B800" }}>Veilig ter plaatse.</span>
             </h1>
 
             <p className="text-lg sm:text-xl text-white/55 leading-relaxed max-w-xl mb-10" style={{ fontFamily: "var(--font-body)" }}>
@@ -155,7 +155,7 @@ export default function ConvoyPage() {
               <Link
                 href="/contact#offerte"
                 className="inline-flex items-center gap-2 px-6 py-3.5 font-bold text-sm rounded-lg transition-colors"
-                style={{ background: "#4A7FD4", color: "#fff", fontFamily: "var(--font-body)" }}
+                style={{ background: "#F5B800", color: "#090909", fontFamily: "var(--font-body)" }}
               >
                 Vraag een offerte
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -181,7 +181,7 @@ export default function ConvoyPage() {
               { value: "100%", label: "Conform wetgeving" },
             ].map((stat) => (
               <div key={stat.label}>
-                <div className="text-2xl sm:text-3xl font-black" style={{ fontFamily: "var(--font-display)", color: "#4A7FD4" }}>{stat.value}</div>
+                <div className="text-2xl sm:text-3xl font-black" style={{ fontFamily: "var(--font-display)", color: "#F5B800" }}>{stat.value}</div>
                 <div className="text-xs text-white/35 mt-1 font-medium" style={{ fontFamily: "var(--font-body)" }}>{stat.label}</div>
               </div>
             ))}
@@ -206,7 +206,7 @@ export default function ConvoyPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (
               <div key={service.title} className="bg-white rounded-2xl p-8 border border-black/[0.07] hover:shadow-lg transition-shadow">
-                <div className="w-10 h-10 text-[#1B3A6B] mb-5">{service.icon}</div>
+                <div className="w-10 h-10 text-[#B88000] mb-5">{service.icon}</div>
                 <h3 className="text-lg font-bold text-[#090909] mb-2" style={{ fontFamily: "var(--font-display)" }}>{service.title}</h3>
                 <p className="text-sm text-[#555] leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{service.description}</p>
               </div>
@@ -237,7 +237,7 @@ export default function ConvoyPage() {
               {transportTypes.map((type) => (
                 <div key={type.label} className="bg-[#F7F6F2] rounded-xl p-5 border border-black/[0.05]">
                   <div className="flex items-center gap-2 mb-1">
-                    <div className="w-2 h-2 rounded-full" style={{ background: "#4A7FD4" }} />
+                    <div className="w-2 h-2 rounded-full" style={{ background: "#F5B800" }} />
                     <p className="text-sm font-bold text-[#090909]" style={{ fontFamily: "var(--font-body)" }}>{type.label}</p>
                   </div>
                   <p className="text-xs text-[#888] pl-4" style={{ fontFamily: "var(--font-body)" }}>{type.sub}</p>
@@ -249,7 +249,7 @@ export default function ConvoyPage() {
       </section>
 
       {/* ─── Wetgeving CTA ───────────────────────────────── */}
-      <section className="py-20 bg-[#0D1B33]">
+      <section className="py-20 bg-[#1A1500]">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-black text-white mb-4" style={{ fontFamily: "var(--font-display)", fontWeight: 900 }}>
             Conform het KB Uitzonderlijk Vervoer
@@ -261,7 +261,7 @@ export default function ConvoyPage() {
           <Link
             href="/contact#offerte"
             className="inline-flex items-center gap-2 px-6 py-3.5 font-bold text-sm rounded-lg transition-colors"
-            style={{ background: "#4A7FD4", color: "#fff", fontFamily: "var(--font-body)" }}
+            style={{ background: "#F5B800", color: "#090909", fontFamily: "var(--font-body)" }}
           >
             Neem contact op
           </Link>
@@ -287,7 +287,7 @@ export default function ConvoyPage() {
               <div className="space-y-3">
                 {["Afmetingen en gewicht van de lading", "Vertrek- en aankomstpunt", "Gewenste datum en tijdstip", "Eventuele bijzonderheden of vereisten"].map((item) => (
                   <div key={item} className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "#4A7FD4" }}>
+                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "#F5B800" }}>
                       <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>

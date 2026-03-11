@@ -277,13 +277,13 @@ export default function HomePage() {
             <Link
               href="/ready"
               className="group relative rounded-2xl overflow-hidden border border-black/[0.07] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
-              style={{ background: "#1A0808" }}
+              style={{ background: "#0D1B33" }}
             >
-              <div className="h-1 w-full" style={{ background: "linear-gradient(90deg, #5C1010, #C0392B)" }} />
+              <div className="h-1 w-full" style={{ background: "linear-gradient(90deg, #1B3A6B, #2563EB)" }} />
               <div className="p-8 flex flex-col flex-1">
                 <span
                   className="text-xs font-bold uppercase tracking-widest mb-3"
-                  style={{ color: "#E05252", fontFamily: "var(--font-body)" }}
+                  style={{ color: "#4A7FD4", fontFamily: "var(--font-body)" }}
                 >
                   SafeSignal Ready
                 </span>
@@ -305,7 +305,7 @@ export default function HomePage() {
                     <span
                       key={tag}
                       className="text-[11px] font-semibold px-2.5 py-1 rounded-full"
-                      style={{ background: "#C0392B20", color: "#E05252", fontFamily: "var(--font-body)" }}
+                      style={{ background: "#2563EB20", color: "#4A7FD4", fontFamily: "var(--font-body)" }}
                     >
                       {tag}
                     </span>
@@ -313,7 +313,7 @@ export default function HomePage() {
                 </div>
                 <div
                   className="inline-flex items-center gap-1.5 text-sm font-bold"
-                  style={{ color: "#E05252", fontFamily: "var(--font-body)" }}
+                  style={{ color: "#4A7FD4", fontFamily: "var(--font-body)" }}
                 >
                   Meer over Ready
                   <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -327,13 +327,13 @@ export default function HomePage() {
             <Link
               href="/infra"
               className="group relative rounded-2xl overflow-hidden border border-black/[0.07] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
-              style={{ background: "#0A1F12" }}
+              style={{ background: "#1A0808" }}
             >
-              <div className="h-1 w-full" style={{ background: "linear-gradient(90deg, #1B5E3A, #3DAA6B)" }} />
+              <div className="h-1 w-full" style={{ background: "linear-gradient(90deg, #5C1010, #C0392B)" }} />
               <div className="p-8 flex flex-col flex-1">
                 <span
                   className="text-xs font-bold uppercase tracking-widest mb-3"
-                  style={{ color: "#3DAA6B", fontFamily: "var(--font-body)" }}
+                  style={{ color: "#E05252", fontFamily: "var(--font-body)" }}
                 >
                   SafeSignal Infra
                 </span>
@@ -355,7 +355,7 @@ export default function HomePage() {
                     <span
                       key={tag}
                       className="text-[11px] font-semibold px-2.5 py-1 rounded-full"
-                      style={{ background: "#3DAA6B20", color: "#3DAA6B", fontFamily: "var(--font-body)" }}
+                      style={{ background: "#C0392B20", color: "#E05252", fontFamily: "var(--font-body)" }}
                     >
                       {tag}
                     </span>
@@ -363,7 +363,7 @@ export default function HomePage() {
                 </div>
                 <div
                   className="inline-flex items-center gap-1.5 text-sm font-bold"
-                  style={{ color: "#3DAA6B", fontFamily: "var(--font-body)" }}
+                  style={{ color: "#E05252", fontFamily: "var(--font-body)" }}
                 >
                   Meer over Infra
                   <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -377,13 +377,13 @@ export default function HomePage() {
             <Link
               href="/convoy"
               className="group relative rounded-2xl overflow-hidden border border-black/[0.07] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
-              style={{ background: "#0D1B33" }}
+              style={{ background: "#1A1500" }}
             >
-              <div className="h-1 w-full" style={{ background: "linear-gradient(90deg, #1B3A6B, #4A7FD4)" }} />
+              <div className="h-1 w-full" style={{ background: "linear-gradient(90deg, #2A2000, #F5B800)" }} />
               <div className="p-8 flex flex-col flex-1">
                 <span
                   className="text-xs font-bold uppercase tracking-widest mb-3"
-                  style={{ color: "#4A7FD4", fontFamily: "var(--font-body)" }}
+                  style={{ color: "#F5B800", fontFamily: "var(--font-body)" }}
                 >
                   SafeSignal Convoy
                 </span>
@@ -405,7 +405,7 @@ export default function HomePage() {
                     <span
                       key={tag}
                       className="text-[11px] font-semibold px-2.5 py-1 rounded-full"
-                      style={{ background: "#4A7FD420", color: "#4A7FD4", fontFamily: "var(--font-body)" }}
+                      style={{ background: "#F5B80020", color: "#F5B800", fontFamily: "var(--font-body)" }}
                     >
                       {tag}
                     </span>
@@ -413,7 +413,7 @@ export default function HomePage() {
                 </div>
                 <div
                   className="inline-flex items-center gap-1.5 text-sm font-bold"
-                  style={{ color: "#4A7FD4", fontFamily: "var(--font-body)" }}
+                  style={{ color: "#F5B800", fontFamily: "var(--font-body)" }}
                 >
                   Meer over Convoy
                   <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
