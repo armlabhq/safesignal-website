@@ -1,7 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
+
+export const metadata: Metadata = {
+  title: "SafeSignal Infra — Tijdelijke Wegsignalisatie",
+  description:
+    "SafeSignal Infra verzorgt tijdelijke wegsignalisatie voor nutswerken, weginfrastructuur en wegenwerken in België. Signalisatieplannen, materiaalverhuur en gecertificeerde verkeersregelaars.",
+  openGraph: {
+    title: "SafeSignal Infra — Tijdelijke Wegsignalisatie",
+    description:
+      "Professionele werf- en wegsignalisatie. Signalisatieplannen, materiaalverhuur en verkeersregelaars conform VSV-wetgeving.",
+    url: "https://safesignal.be/infra",
+    siteName: "SafeSignal",
+    locale: "nl_BE",
+    type: "website",
+  },
+};
 
 const services = [
   {

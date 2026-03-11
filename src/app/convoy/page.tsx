@@ -1,7 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
+
+export const metadata: Metadata = {
+  title: "SafeSignal Convoy — Begeleiding Uitzonderlijk Transport",
+  description:
+    "SafeSignal Convoy biedt professionele escortediensten voor uitzonderlijk transport door heel België en de buurlanden. Pilootvoertuigen, vergunningsaanvragen en routeplanning.",
+  openGraph: {
+    title: "SafeSignal Convoy — Begeleiding Uitzonderlijk Transport",
+    description:
+      "Professionele begeleiding van brede en zware ladingen. Escortevoertuigen, vergunningen en routeplanning voor uitzonderlijk transport in België.",
+    url: "https://safesignal.be/convoy",
+    siteName: "SafeSignal",
+    locale: "nl_BE",
+    type: "website",
+  },
+};
 
 const services = [
   {

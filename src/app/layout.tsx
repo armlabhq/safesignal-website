@@ -17,9 +17,31 @@ const barlow = Barlow({
 });
 
 export const metadata: Metadata = {
-  title: "SafeSignal — Voertuigsignalisatie & Radiocommunicatie",
+  title: {
+    default: "SafeSignal — Voertuigsignalisatie & Radiocommunicatie",
+    template: "%s | SafeSignal",
+  },
   description:
     "SafeSignal levert professionele voertuigsignalisatie en radiocommunicatiesystemen voor interventie- en werkvoertuigen in België. Zwaailichten, lichtbalken, sirenes en installatie op maat.",
+  metadataBase: new URL("https://safesignal.be"),
+  openGraph: {
+    title: "SafeSignal — Voertuigsignalisatie & Radiocommunicatie",
+    description:
+      "Professionele signalisatie voor interventie- en werkvoertuigen. SafeSignal Ready · Infra · Convoy — Bilzen-Hoeselt.",
+    url: "https://safesignal.be",
+    siteName: "SafeSignal",
+    locale: "nl_BE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SafeSignal — Voertuigsignalisatie & Radiocommunicatie",
+    description:
+      "Professionele signalisatie voor interventie- en werkvoertuigen. SafeSignal Ready · Infra · Convoy.",
+  },
+  alternates: {
+    canonical: "https://safesignal.be",
+  },
 };
 
 export default function RootLayout({

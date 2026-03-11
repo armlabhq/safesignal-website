@@ -1,6 +1,22 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Over SafeSignal — Voertuigsignalisatie uit Bilzen-Hoeselt",
+  description:
+    "SafeSignal is een specialist in voertuigsignalisatie en radiocommunicatie gevestigd in Bilzen-Hoeselt. Meer dan 15 jaar ervaring in uitrusting van interventie- en werkvoertuigen.",
+  openGraph: {
+    title: "Over SafeSignal",
+    description:
+      "15+ jaar specialist in voertuigsignalisatie. Drie divisies: Ready, Infra en Convoy — gevestigd in Bilzen-Hoeselt.",
+    url: "https://safesignal.be/over-ons",
+    siteName: "SafeSignal",
+    locale: "nl_BE",
+    type: "website",
+  },
+};
 
 export default function OverOnsPage() {
   return (

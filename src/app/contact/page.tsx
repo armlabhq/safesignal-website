@@ -1,7 +1,23 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Contact & Offerte — SafeSignal",
+  description:
+    "Neem contact op met SafeSignal voor een offerte op maat. Voertuiguitrusting, wegsignalisatie of escortediensten — wij begeleiden u van vraag tot oplevering.",
+  openGraph: {
+    title: "Contact & Offerte — SafeSignal",
+    description:
+      "Vraag een offerte aan voor uw voertuiguitrusting, wegsignalisatie of escortediensten. SafeSignal, Bilzen-Hoeselt.",
+    url: "https://safesignal.be/contact",
+    siteName: "SafeSignal",
+    locale: "nl_BE",
+    type: "website",
+  },
+};
 
 export default function ContactPage() {
   return (

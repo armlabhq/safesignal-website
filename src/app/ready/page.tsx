@@ -1,7 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
+
+export const metadata: Metadata = {
+  title: "SafeSignal Ready — Voertuiguitrusting & Noodverlichting",
+  description:
+    "SafeSignal Ready rust interventie- en werkvoertuigen professioneel uit. Lichtbalken, sirenes, Battenburg-markering, radiocommunicatie — CE-gecertificeerd en vakkundig gemonteerd in Bilzen-Hoeselt.",
+  openGraph: {
+    title: "SafeSignal Ready — Voertuiguitrusting & Noodverlichting",
+    description:
+      "Complete uitrusting voor politie, brandweer en werkvoertuigen. Gecertificeerde lichtbalken, sirenes en Battenburg-markering.",
+    url: "https://safesignal.be/ready",
+    siteName: "SafeSignal",
+    locale: "nl_BE",
+    type: "website",
+  },
+};
 
 const services = [
   {
