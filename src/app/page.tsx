@@ -187,7 +187,7 @@ export default function HomePage() {
             >
               Elke seconde
               <br />
-              <span style={{ color: "#F5B800" }}>telt.</span>
+              <span className="telt-strobe">telt.</span>
             </h1>
 
             <p

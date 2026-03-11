@@ -89,6 +89,44 @@ html {
 .fade-up-3 { animation-delay: 0.35s; }
 .fade-up-4 { animation-delay: 0.5s; }
 
+/* === Telt. strobe animation (yellow × 4 → blue × 4 → red × 4) === */
+@keyframes telt-strobe {
+  /* Yellow × 4 */
+  0%   { color: #F5B800; text-shadow: 0 0 32px rgba(245,184,0,0.85); }
+  4%   { color: rgba(255,255,255,0.06); text-shadow: none; }
+  8%   { color: #F5B800; text-shadow: 0 0 32px rgba(245,184,0,0.85); }
+  12%  { color: rgba(255,255,255,0.06); text-shadow: none; }
+  16%  { color: #F5B800; text-shadow: 0 0 32px rgba(245,184,0,0.85); }
+  20%  { color: rgba(255,255,255,0.06); text-shadow: none; }
+  24%  { color: #F5B800; text-shadow: 0 0 32px rgba(245,184,0,0.85); }
+  28%  { color: rgba(255,255,255,0.06); text-shadow: none; }
+  /* Blue × 4 */
+  33%  { color: #2563EB; text-shadow: 0 0 32px rgba(37,99,235,0.85); }
+  37%  { color: rgba(255,255,255,0.06); text-shadow: none; }
+  41%  { color: #2563EB; text-shadow: 0 0 32px rgba(37,99,235,0.85); }
+  45%  { color: rgba(255,255,255,0.06); text-shadow: none; }
+  49%  { color: #2563EB; text-shadow: 0 0 32px rgba(37,99,235,0.85); }
+  53%  { color: rgba(255,255,255,0.06); text-shadow: none; }
+  57%  { color: #2563EB; text-shadow: 0 0 32px rgba(37,99,235,0.85); }
+  61%  { color: rgba(255,255,255,0.06); text-shadow: none; }
+  /* Red × 4 */
+  66%  { color: #E05252; text-shadow: 0 0 32px rgba(224,82,82,0.85); }
+  70%  { color: rgba(255,255,255,0.06); text-shadow: none; }
+  74%  { color: #E05252; text-shadow: 0 0 32px rgba(224,82,82,0.85); }
+  78%  { color: rgba(255,255,255,0.06); text-shadow: none; }
+  82%  { color: #E05252; text-shadow: 0 0 32px rgba(224,82,82,0.85); }
+  86%  { color: rgba(255,255,255,0.06); text-shadow: none; }
+  90%  { color: #E05252; text-shadow: 0 0 32px rgba(224,82,82,0.85); }
+  94%  { color: rgba(255,255,255,0.06); text-shadow: none; }
+  100% { color: rgba(255,255,255,0.06); text-shadow: none; }
+}
+
+.telt-strobe {
+  color: #F5B800;
+  animation: telt-strobe 3s step-end infinite;
+  animation-delay: 2s;
+}
+
 /* === Diagonal road stripe background === */
 .road-stripe {
   background-image: repeating-linear-gradient(
