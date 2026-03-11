@@ -132,6 +132,7 @@ html {
 
 .ready-beacon-char {
   display: inline-block;
+  color: rgba(74, 127, 212, 0.45);
   animation: ready-beacon 1.1s linear infinite;
 }
 
@@ -148,6 +149,7 @@ html {
 }
 
 .infra-alt-word {
+  color: rgba(224, 82, 82, 0.45);
   animation: infra-word-flash 1s step-end infinite;
 }
 
@@ -169,6 +171,7 @@ html {
 
 .convoy-sweep-letter {
   display: inline-block;
+  color: rgba(245, 184, 0, 0.4);
   animation: convoy-sweep 1.4s linear infinite;
 }
 
