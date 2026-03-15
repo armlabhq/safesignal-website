@@ -21,7 +21,7 @@ function getLogoAccentColor(pathname: string): string {
   if (pathname.startsWith("/ready")) return "#2563EB";
   if (pathname.startsWith("/infra")) return "#C0392B";
   if (pathname.startsWith("/convoy")) return "#F5B800";
-  return "#B31820"; // dark red = SafeSignal group brand
+  return "#F5B800";
 }
 
 export function Header({ variant = "dark" }: HeaderProps) {

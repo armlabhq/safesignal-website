@@ -6,88 +6,93 @@ interface SafeSignalLogoProps {
   accentColor?: string;
 }
 
-// Sizes: [displayHeight, viewBox width, viewBox height]
-const SIZE_MAP = {
-  sm: [26, 270, 62] as const,
-  md: [34, 270, 62] as const,
-  lg: [46, 270, 62] as const,
-};
-
 export function SafeSignalLogo({
   variant = "dark",
   size = "md",
-  accentColor = "#B31820", // dark red = group default
+  accentColor = "#F5B800",
 }: SafeSignalLogoProps) {
   const isLight = variant === "light";
-  const textColor = isLight ? "#FAFAF8" : "#0A0A0A";
-
-  const [h, vw, vh] = SIZE_MAP[size];
-  const w = Math.round(h * (vw / vh));
-
-  // Signal arcs above the "i" in "signal"
-  // "safe" ≈ 112px wide at font-size 52, so "signal" starts at x=112
-  // "s" ≈ 28px wide → "i" starts at x=140, center x≈148
-  // Arcs centered at (148, 12), opening upward (true semicircles, sweep-flag=0)
-  const cx = 148;
-  const cy = 12;
+  const iconSize = { sm: 22, md: 28, lg: 38 }[size];
+  const textSize = { sm: "text-xl", md: "text-2xl", lg: "text-3xl" }[size];
+  const taglineSize = { sm: "text-[8px]", md: "text-[9px]", lg: "text-[10px]" }[size];
+  const textColor = isLight ? "#FAFAF8" : "#090909";
+  const taglineColor = isLight ? "rgba(250,250,248,0.45)" : "rgba(9,9,9,0.38)";
 
   return (
-    <svg
-      width={w}
-      height={h}
-      viewBox={`0 0 ${vw} ${vh}`}
-      fill="none"
-      aria-label="SafeSignal"
-      role="img"
-    >
-      {/* "safe" — in base text color */}
-      <text
-        x="0"
-        y="52"
-        fontFamily="'Barlow', system-ui, sans-serif"
-        fontWeight="600"
-        fontSize="52"
-        fill={textColor}
+    <div className="flex items-center gap-2">
+      {/* Signal icon — concentric arcs pointing right */}
+      <svg
+        width={iconSize}
+        height={iconSize}
+        viewBox="0 0 40 40"
+        fill="none"
+        aria-hidden="true"
       >
-        safe
-      </text>
+        {/* Outer arc */}
+        <path
+          d="M6 20 C6 11.16 13.16 4 22 4"
+          stroke={accentColor}
+          strokeWidth="3.5"
+          strokeLinecap="round"
+        />
+        <path
+          d="M6 20 C6 28.84 13.16 36 22 36"
+          stroke={accentColor}
+          strokeWidth="3.5"
+          strokeLinecap="round"
+        />
+        {/* Mid arc */}
+        <path
+          d="M12 20 C12 14.48 16.48 10 22 10"
+          stroke={accentColor}
+          strokeWidth="3"
+          strokeLinecap="round"
+          opacity="0.65"
+        />
+        <path
+          d="M12 20 C12 25.52 16.48 30 22 30"
+          stroke={accentColor}
+          strokeWidth="3"
+          strokeLinecap="round"
+          opacity="0.65"
+        />
+        {/* Inner arc */}
+        <path
+          d="M18 20 C18 17.24 20.24 15 23 15"
+          stroke={accentColor}
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          opacity="0.4"
+        />
+        <path
+          d="M18 20 C18 22.76 20.24 25 23 25"
+          stroke={accentColor}
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          opacity="0.4"
+        />
+        {/* Dot */}
+        <circle cx="27" cy="20" r="3" fill={accentColor} />
+      </svg>
 
-      {/* "signal" — in accent color */}
-      <text
-        x="112"
-        y="52"
-        fontFamily="'Barlow', system-ui, sans-serif"
-        fontWeight="600"
-        fontSize="52"
-        fill={accentColor}
-      >
-        signal
-      </text>
-
-      {/* Signal arcs — lettermark above the "i" dot, WiFi-style opening upward */}
-      {/* Outer arc: r=10, top at (cx, cy-10) */}
-      <path
-        d={`M ${cx - 10} ${cy} A 10 10 0 0 0 ${cx + 10} ${cy}`}
-        stroke={accentColor}
-        strokeWidth="2.4"
-        strokeLinecap="round"
-      />
-      {/* Mid arc: r=7 */}
-      <path
-        d={`M ${cx - 7} ${cy} A 7 7 0 0 0 ${cx + 7} ${cy}`}
-        stroke={accentColor}
-        strokeWidth="2.1"
-        strokeLinecap="round"
-      />
-      {/* Inner arc: r=4 */}
-      <path
-        d={`M ${cx - 4} ${cy} A 4 4 0 0 0 ${cx + 4} ${cy}`}
-        stroke={accentColor}
-        strokeWidth="1.8"
-        strokeLinecap="round"
-      />
-      {/* Center dot — replaces the "i" dot */}
-      <circle cx={cx} cy={cy} r="2.2" fill={accentColor} />
-    </svg>
+      {/* Wordmark */}
+      <div className="leading-none" style={{ fontFamily: "var(--font-body)" }}>
+        <div
+          className={`font-semibold tracking-tight ${textSize}`}
+          style={{ color: textColor, letterSpacing: "-0.02em" }}
+        >
+          safe
+          <span style={{ color: accentColor }}>signal</span>
+        </div>
+        {size !== "sm" && (
+          <div
+            className={`${taglineSize} font-medium uppercase tracking-widest mt-0.5`}
+            style={{ color: taglineColor }}
+          >
+            voertuigsignalisatie · radiocommunicatie
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
