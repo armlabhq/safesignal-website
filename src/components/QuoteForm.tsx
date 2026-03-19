@@ -3,13 +3,11 @@
 import { useState } from "react";
 
 const serviceOptions = [
-  "Zwaailichten & lichtbalken",
-  "Flitsers & signaallampen",
-  "Sirenes & luidsprekers",
-  "Radiocommunicatie",
-  "Installatie & montage",
-  "Voertuiguitrusting op maat",
-  "Onderhoud & keuring",
+  "Interventievoertuigen (politie, brandweer, medische diensten)",
+  "Werkvoertuigen (takeldiensten, nutsbedrijven, wegenbouw)",
+  "Installatie & ondersteuning",
+  "SafeSignal Convoy (uitzonderlijk transport)",
+  "SafeSignal Infra (tijdelijke wegsignalisatie)",
   "Ander / Meer informatie",
 ];
 
