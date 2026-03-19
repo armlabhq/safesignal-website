@@ -15,10 +15,13 @@ const serviceOptions = [
 
 interface QuoteFormProps {
   accentColor?: string;
+  businessUnit?: string;
 }
 
-export function QuoteForm({ accentColor = "#F5B800" }: QuoteFormProps) {
+export function QuoteForm({ accentColor = "#F5B800", businessUnit }: QuoteFormProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
     company: "",
@@ -28,9 +31,26 @@ export function QuoteForm({ accentColor = "#F5B800" }: QuoteFormProps) {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError(false);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, businessUnit }),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (
@@ -168,11 +188,19 @@ export function QuoteForm({ accentColor = "#F5B800" }: QuoteFormProps) {
 
       <button
         type="submit"
-        className="w-full py-3.5 rounded-lg text-sm font-bold transition-all hover:brightness-110 active:scale-[0.99]"
+        disabled={loading}
+        className="w-full py-3.5 rounded-lg text-sm font-bold transition-all hover:brightness-110 active:scale-[0.99] disabled:opacity-60"
         style={{ background: accentColor, color: "#090909" }}
       >
-        Offerte aanvragen
+        {loading ? "Versturen…" : "Offerte aanvragen"}
       </button>
+
+      {error && (
+        <p className="text-xs text-center text-red-600">
+          Er liep iets mis. Probeer opnieuw of mail naar{" "}
+          <a href="mailto:info@safesignal.be" className="underline">info@safesignal.be</a>.
+        </p>
+      )}
 
       <p className="text-xs text-center text-[#999999]">
         Wij reageren doorgaans binnen 1 werkdag · <a href="tel:+32" className="underline hover:text-[#555]">Bel ons direct</a>

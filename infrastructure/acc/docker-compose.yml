@@ -5,6 +5,8 @@ services:
     image: ${IMAGE:-ghcr.io/armlabhq/safesignal-website:main}
     container_name: safesignal-acc-web
     restart: unless-stopped
+    environment:
+      - BREVO_API_KEY=${BREVO_API_KEY}
     networks:
       - proxy
       - internal

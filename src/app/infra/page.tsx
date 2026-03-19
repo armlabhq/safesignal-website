@@ -315,7 +315,7 @@ export default function InfraPage() {
                 ))}
               </div>
             </div>
-            <QuoteForm />
+            <QuoteForm businessUnit="Infra" />
           </div>
         </div>
       </section>
