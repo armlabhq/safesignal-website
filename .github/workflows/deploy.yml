@@ -95,6 +95,6 @@ jobs:
           envs: DEPLOY_TAG
           script: |
             cd ~/safesignal/prod
-            echo "IMAGE=ghcr.io/armlabhq/safesignal-website:${DEPLOY_TAG}" > .env
+            echo "IMAGE=ghcr.io/armlabhq/safesignal-website:${DEPLOY_TAG#v}" > .env
             docker compose pull
             docker compose up -d --remove-orphans
