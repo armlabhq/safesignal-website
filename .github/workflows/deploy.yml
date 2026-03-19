@@ -52,12 +52,24 @@ jobs:
     if: github.ref == 'refs/heads/main'
     environment: acc
     steps:
+      - uses: actions/checkout@v4
+
       - name: Set up Tailscale
         uses: tailscale/github-action@v2
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
           tags: tag:ci
+
+      - name: Copy compose file to fsn1 (acc)
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: fsn1.tailde0fcd.ts.net
+          username: wouter
+          key: ${{ secrets.FSN1_SSH_KEY }}
+          source: infrastructure/acc/docker-compose.yml
+          target: ~/safesignal/acc/
+          strip_components: 2
 
       - name: Deploy to fsn1 (acc)
         uses: appleboy/ssh-action@v1
@@ -67,7 +79,8 @@ jobs:
           key: ${{ secrets.FSN1_SSH_KEY }}
           script: |
             cd ~/safesignal/acc
-            echo "IMAGE=ghcr.io/armlabhq/safesignal-website:main" > .env
+            sed -i "s|^IMAGE=.*|IMAGE=ghcr.io/armlabhq/safesignal-website:main|" .env 2>/dev/null \
+              || echo "IMAGE=ghcr.io/armlabhq/safesignal-website:main" > .env
             docker compose pull
             docker compose up -d --remove-orphans
 
@@ -77,12 +90,24 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/v')
     environment: prod
     steps:
+      - uses: actions/checkout@v4
+
       - name: Set up Tailscale
         uses: tailscale/github-action@v2
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
           tags: tag:ci
+
+      - name: Copy compose file to fsn1 (prod)
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: fsn1.tailde0fcd.ts.net
+          username: wouter
+          key: ${{ secrets.FSN1_SSH_KEY }}
+          source: infrastructure/prod/docker-compose.yml
+          target: ~/safesignal/prod/
+          strip_components: 2
 
       - name: Deploy to fsn1 (prod)
         uses: appleboy/ssh-action@v1
@@ -95,6 +120,7 @@ jobs:
           envs: DEPLOY_TAG
           script: |
             cd ~/safesignal/prod
-            echo "IMAGE=ghcr.io/armlabhq/safesignal-website:${DEPLOY_TAG#v}" > .env
+            sed -i "s|^IMAGE=.*|IMAGE=ghcr.io/armlabhq/safesignal-website:${DEPLOY_TAG#v}|" .env 2>/dev/null \
+              || echo "IMAGE=ghcr.io/armlabhq/safesignal-website:${DEPLOY_TAG#v}" > .env
             docker compose pull
             docker compose up -d --remove-orphans
